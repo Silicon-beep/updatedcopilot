@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Technology Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1f4037, #99f2c8);
+        }
+        .product {
+            width: 200px;
+            border: 1px solid #000;
+            margin: 10px;
+            padding: 10px;
+        }
+        .product img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to our Technology Company</h1>
+    <h2>Products</h2>
+    <div id="products"></div>
+    <h2>Contact Us</h2>
+    <p>Please contact us at techcompany@example.com</p>
+
+    <script>
+        var products = [
+            { name: 'iPhone', image: 'iphone.jpg', description: 'This is an iPhone.' },
+            { name: 'Samsung Tablet', image: 'samsung.jpg', description: 'This is a Samsung Tablet.' },
+            { name: 'Laptop', image: 'laptop.jpg', description: 'This is a Laptop.' },
+            { name: 'Projector', image: 'projector.jpg', description: 'This is a Projector.' },
+            { name: 'Speakers', image: 'speakers.jpg', description: 'These are Speakers.' }
+        ];
+
+        var productsDiv = document.getElementById('products');
+        for (var i = 0; i < products.length; i++) {
+            var productDiv = document.createElement('div');
+            productDiv.className = 'product';
+            productDiv.innerHTML = '<h3>' + products[i].name + '</h3>' +
+                '<img src="' + products[i].image + '" alt="' + products[i].description + '">' +
+                '<p>' + products[i].description + '</p>';
+            productsDiv.appendChild(productDiv);
+        }
+    </script>
+</body>
+</html>
